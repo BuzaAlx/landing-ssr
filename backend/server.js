@@ -1,27 +1,32 @@
 const Koa = require("koa");
-const router = require("@koa/router")();
-
 const app = new Koa();
+// const router = require("@koa/router")();
+const cors = require("@koa/cors");
+const config = require("./config");
+const { createDeferred } = require("./utils/helpers");
 
-app.use(async function (ctx, next) {
-  try {
-    ctx.response.body = "Hello";
-    next();
-  } catch (err) {
-    if (err.status === 401) {
-      ctx.status = 401;
-      ctx.set("WWW-Authenticate", "Basic");
-      ctx.body = "cant haz that";
-    } else {
-      throw err;
-    }
-  }
+app.use(cors());
+
+app.use((context, next) => {
+  console.log(`New request ${context.method} ${context.originalUrl}`);
+
+  return next();
 });
 
-router.get("/", add);
+const run = async () => {
+  const deferred = createDeferred();
 
-async function add(ctx) {
-  await ctx.render("new");
-}
+  app.listen(config.server.port, config.server.host, deferred.resolve);
+
+  await deferred.promise;
+
+  logger.log(
+    `Server run on http://${config.server.host}:${config.server.port}`
+  );
+};
+
+run().catch((error) => {
+  console.error(error);
+});
 
 app.listen(3000);
