@@ -1,5 +1,10 @@
 const Router = require("@koa/router");
 const { normalizeMethods, normalizeHandlers } = require("./utils/helpers");
+const { makeValidators } = require("./make-validators");
+const { makeBodyParser } = require("./make-body-parser");
+const { makeBodyTypeValidator } = require("./make-body-type-validator");
+
+///////////////////////////////////
 
 const makeRoute = (rawRoute) => {
   const route = {
@@ -8,24 +13,24 @@ const makeRoute = (rawRoute) => {
     handlers: normalizeHandlers(rawRoute),
   };
 
-  //   if (rawRoute.validate !== undefined) {
-  //     const middlewares = makeValidators(rawRoute);
+  if (rawRoute.validate !== undefined) {
+    const middlewares = makeValidators(rawRoute);
 
-  //     if (rawRoute.validate.body !== undefined) {
-  //       const bodyTypeValidator = makeBodyTypeValidator(
-  //         rawRoute.validate.body.type
-  //       );
+    if (rawRoute.validate.body !== undefined) {
+      const bodyTypeValidator = makeBodyTypeValidator(
+        rawRoute.validate.body.type
+      );
 
-  //       const bodyParser = makeBodyParser(
-  //         rawRoute.validate.body.type,
-  //         rawRoute.validate.body.options
-  //       );
+      const bodyParser = makeBodyParser(
+        rawRoute.validate.body.type,
+        rawRoute.validate.body.options
+      );
 
-  //       middlewares.unshift(bodyTypeValidator, bodyParser);
-  //     }
+      middlewares.unshift(bodyTypeValidator, bodyParser);
+    }
 
-  //     route.handlers.unshift(...middlewares);
-  //   }
+    route.handlers.unshift(...middlewares);
+  }
 
   return route;
 };

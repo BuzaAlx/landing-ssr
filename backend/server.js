@@ -1,9 +1,9 @@
 const Koa = require("koa");
 const app = new Koa();
-// const router = require("@koa/router")();
 const cors = require("@koa/cors");
-const config = require("./config");
+const { config } = require("./config");
 const { createDeferred } = require("./utils/helpers");
+const { router } = require("./routes");
 
 app.use(cors());
 
@@ -13,6 +13,9 @@ app.use((context, next) => {
   return next();
 });
 
+app.use(router.routes());
+app.use(router.allowedMethods());
+
 const run = async () => {
   const deferred = createDeferred();
 
@@ -20,7 +23,7 @@ const run = async () => {
 
   await deferred.promise;
 
-  logger.log(
+  console.log(
     `Server run on http://${config.server.host}:${config.server.port}`
   );
 };
