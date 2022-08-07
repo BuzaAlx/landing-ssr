@@ -12,7 +12,7 @@ const config = {
     SECRET_KEY: "secret",
   },
   files: {
-    storagePath: pathResolve(__dirname, "../public/uploads"),
+    storagePath: pathResolve(__dirname, "./public/uploads"),
   },
 };
 
