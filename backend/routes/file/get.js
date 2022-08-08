@@ -26,15 +26,19 @@ const getFile = {
 
     const files = await query.exec();
 
-    for (file of files) {
-      let url = await getFileUrl(file);
-      file.imageUrl = url;
-    }
+    // for (file of files) {
+    //   let url = await getFileUrl(file);
+    //   file.imageUrl = url;
+    // }
+
+    let res = await Promise.all(files.map(mapFileToResponse));
+
+    console.log(res);
 
     context.status = 200;
 
     context.body = {
-      response: files.map(mapFileToResponse),
+      response: res,
     };
   },
 };
