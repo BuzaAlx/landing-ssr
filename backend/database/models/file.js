@@ -11,10 +11,10 @@ const definition = {
     type: SchemaTypes.String,
     required: true,
   },
-  savedAs: {
-    type: SchemaTypes.String,
-    required: true,
-  },
+  // savedAs: {
+  //   type: SchemaTypes.String,
+  //   required: true,
+  // },
   mimeType: {
     type: SchemaTypes.String,
     required: true,

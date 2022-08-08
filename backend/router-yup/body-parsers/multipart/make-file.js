@@ -1,16 +1,14 @@
-const { parse: pathParse, relative: pathRelative } = require("path");
-
+const { parse: pathParse } = require("path");
 const { extension: mimeExtension } = require("mime-types");
-
-const { config } = require("../../../config");
 
 const makeFile = (rawFile) => {
   const { ext } = pathParse(rawFile.path);
 
+  console.log(rawFile);
+
   const file = {
     name: pathParse(rawFile.name).name,
     extension: ext.slice(1),
-    savedAs: pathRelative(config.files.storagePath, rawFile.path),
     mimeType: rawFile.type,
     size: rawFile.size,
     hash: rawFile.hash,
