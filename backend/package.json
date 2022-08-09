@@ -39,7 +39,7 @@
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",
     "mime-types": "^2.1.35",
-    "mongoose": "^6.5.1",
+    "mongoose": "^5.12.4",
     "yup": "^0.32.11"
   }
 }
