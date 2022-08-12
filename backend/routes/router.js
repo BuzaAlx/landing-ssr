@@ -6,6 +6,8 @@ const { technologyRouter } = require("./technology");
 const { projectRouter } = require("./project");
 const { sloganRouter } = require("./slogan");
 const { factRouter } = require("./fact");
+const { testimonialRouter } = require("./testimonial");
+const { homeRouter } = require("./home");
 
 const router = new Router();
 
@@ -15,7 +17,9 @@ router.use(
   technologyRouter.middleware(),
   projectRouter.middleware(),
   sloganRouter.middleware(),
-  factRouter.middleware()
+  factRouter.middleware(),
+  testimonialRouter.middleware(),
+  homeRouter.middleware()
 );
 
 exports.router = router;

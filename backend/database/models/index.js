@@ -4,6 +4,7 @@ const technology = require("./technology");
 const project = require("./project");
 const slogan = require("./slogan");
 const fact = require("./fact");
+const testimonial = require("./testimonial");
 
 module.exports = {
   ...user,
@@ -12,4 +13,5 @@ module.exports = {
   ...project,
   ...slogan,
   ...fact,
+  ...testimonial,
 };
