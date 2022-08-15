@@ -31,5 +31,3 @@ const run = async () => {
 run().catch((error) => {
   console.error(error);
 });
-
-app.listen(3000);
