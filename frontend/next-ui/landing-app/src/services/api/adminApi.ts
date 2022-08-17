@@ -49,7 +49,9 @@ export const getAdminData = async (route: string) => {
 
 export const createAdminData = async (route: string, obj: any) => {
   try {
-    const { data } = await axios.post(API_ROUTES[route], JSON.stringify(obj));
+    const { data } = await axios.post(API_ROUTES[route], JSON.stringify(obj), {
+      headers: { "Content-Type": "application/json" },
+    });
     const response = data.response;
     return response;
   } catch (error) {
@@ -76,11 +78,12 @@ export const uploadImage = async (file: any) => {
 
 export const updateAdminData = async (route: string, id: string, obj: any) => {
   try {
-    const { data } = await axios.put(
-      API_ROUTES[route] + id,
-      JSON.stringify(obj)
-    );
-    const response = data.response;
+    const res = await axios.put(API_ROUTES[route] + id, JSON.stringify(obj), {
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const response = res.data.response;
+
     return response;
   } catch (error) {
     console.log("error", { error });

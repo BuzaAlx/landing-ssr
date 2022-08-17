@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createAdminData, updateAdminData } from "services/api/adminApi";
 
-import { ITestimonial, IPlatform } from "../types";
+import { ITestimonial, ISite } from "../types";
 import * as Styled from "../Form.styles";
 import { useInput } from "../Hooks";
 
@@ -11,12 +11,12 @@ const TestimonialForm: React.FC<{
   testimonial?: ITestimonial | undefined;
   close: Function;
 }> = ({ testimonial, close }) => {
-  const clutch: IPlatform | undefined = testimonial?.platforms.find(
-    (item) => item.type === "clutch"
+  const clutch: ISite | undefined = testimonial?.sites?.find(
+    (item) => item.name === "clutch"
   );
 
-  const upwork: IPlatform | undefined = testimonial?.platforms.find(
-    (item) => item.type === "upwork"
+  const upwork: ISite | undefined = testimonial?.sites?.find(
+    (item) => item.name === "upwork"
   );
 
   const countryCode = useInput(testimonial?.countryCode);
@@ -34,7 +34,7 @@ const TestimonialForm: React.FC<{
     const clutch =
       clutchLinkInput.value || clutchRateInput.value
         ? {
-            type: "clutch",
+            name: "clutch",
             link: clutchLinkInput.value,
             rate: clutchRateInput.value,
           }
@@ -42,7 +42,7 @@ const TestimonialForm: React.FC<{
     const upwork =
       upworkLinkInput.value || upworkRateInput.value
         ? {
-            type: "upwork",
+            name: "upwork",
             link: upworkLinkInput.value,
             rate: upworkRateInput.value,
           }
@@ -53,23 +53,21 @@ const TestimonialForm: React.FC<{
       companyName: companyName.value,
       countryCode: countryCode.value,
       feedback: feedback.value,
-      platforms: [],
+      sites: [],
     };
 
     if (clutch) {
-      newtestimonial.platforms = [...newtestimonial.platforms, clutch];
+      newtestimonial.sites = [...newtestimonial.sites, clutch];
     }
 
     if (upwork) {
-      newtestimonial.platforms = [...newtestimonial.platforms, upwork];
+      newtestimonial.sites = [...newtestimonial.sites, upwork];
     }
 
     testimonial
-      ? updateAdminData(
-          "testimonial",
-          testimonial?.id!,
-          newtestimonial
-        ).then(() => close())
+      ? updateAdminData("testimonial", testimonial?.id!, newtestimonial).then(
+          () => close()
+        )
       : createAdminData("testimonial", newtestimonial).then(() => close());
   };
 

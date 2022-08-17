@@ -36,7 +36,7 @@ const Images: React.FC<{
   };
 
   let settings = {
-    infinite: true,
+    infinite: false,
     slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow: (
@@ -63,7 +63,7 @@ const Images: React.FC<{
                   checked={imageID === image.id}
                   onChange={() => handleImageChange(image.id)}
                 />
-                <img className="slide-image" src={image.s3FileUrl}></img>
+                <img className="slide-image" src={image.url}></img>
                 <CustomCheckbox sliderLabel selected={imageID === image.id}>
                   <img src={slides.Check} alt={slides.Check} />
                 </CustomCheckbox>

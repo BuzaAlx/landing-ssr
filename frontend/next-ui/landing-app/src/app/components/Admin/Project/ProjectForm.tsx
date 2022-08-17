@@ -20,7 +20,7 @@ const ProjectForm: React.FC<{
   );
   const [countryCode, setCountryCode] = useState(project?.countryCode || "");
 
-  const [link, setLink] = useState(project?.link || "");
+  const [projectLink, setLink] = useState(project?.projectLink || "");
 
   const [showOnHomePage, setShowOnHomePage] = useState(
     project?.showOnHomePage || false
@@ -40,7 +40,7 @@ const ProjectForm: React.FC<{
       fullDescription,
       shortDescription,
       countryCode,
-      link,
+      projectLink,
       showOnHomePage,
       imageFileId: imageFile,
       technologyIds,
@@ -102,17 +102,22 @@ const ProjectForm: React.FC<{
           <span>Link:</span>
           <Styled.AdminTextInput
             type="text"
-            value={link}
+            value={projectLink}
             onChange={({ target: { value } }) => setLink(value)}
           />
         </Styled.Label>
 
-        <>
+        <Styled.Label>
+          <span>Technologies:</span>
           <Styled.Row>
             {technologies.map((tech) => (
               <Styled.CheckboxContainer>
                 <div>{tech.name}</div>
                 <Styled.CheckboxLabel>
+                  <Styled.ImageContainer>
+                    <img src={tech.iconFile.url} alt="asds" />
+                  </Styled.ImageContainer>
+
                   <input
                     type="checkbox"
                     name="TechOption"
@@ -128,13 +133,33 @@ const ProjectForm: React.FC<{
               </Styled.CheckboxContainer>
             ))}
           </Styled.Row>
-        </>
+        </Styled.Label>
+
         <Styled.PicturesWrapper>
           <span>Pictures:</span>
+
           <Images activeImage={project?.imageFile} getImageId={getImageId} />
         </Styled.PicturesWrapper>
-        <Styled.CheckboxContainer>
-          <div>Show on page:</div>
+        {/*  */}
+        <Styled.Label>
+          <span>Show on page:</span>
+          <Styled.CheckboxContainer>
+            <Styled.CheckboxLabel>
+              <input
+                type="checkbox"
+                checked={showOnHomePage}
+                onChange={({ target: { checked } }) =>
+                  setShowOnHomePage(checked)
+                }
+              />
+              <Styled.CustomCheckbox selected={showOnHomePage}>
+                <img src={slides.Check} alt="checkbox" />
+              </Styled.CustomCheckbox>
+            </Styled.CheckboxLabel>
+          </Styled.CheckboxContainer>
+        </Styled.Label>
+
+        {/* <Styled.CheckboxContainer>
           <Styled.CheckboxLabel>
             <input
               type="checkbox"
@@ -145,7 +170,10 @@ const ProjectForm: React.FC<{
               <img src={slides.Check} alt="checkbox" />
             </Styled.CustomCheckbox>
           </Styled.CheckboxLabel>
-        </Styled.CheckboxContainer>
+        </Styled.CheckboxContainer> */}
+
+        {/*  */}
+
         <Styled.ButtonWrapper>
           <Styled.Button
             type="submit"
@@ -155,7 +183,7 @@ const ProjectForm: React.FC<{
                 fullDescription &&
                 shortDescription &&
                 countryCode &&
-                link &&
+                projectLink &&
                 imageFile
               )
             }

@@ -143,20 +143,20 @@ const AdminPage: React.FC = () => {
     deleteAdminData(route, id).then(() => loadData(route));
   };
 
-  const handleOpenMenu = (event) => {
+  const closeModal = () => {
     setIsModal(false);
+    seteditItem(null);
+  };
+
+  const handleOpenMenu = (event) => {
+    closeModal();
     const id = event.target.id;
     setCategoryOpen(id);
   };
 
   const openModal = (id: string): void => {
-    setIsModal(true);
     seteditItem(id);
-  };
-
-  const closeModal = () => {
-    setIsModal(false);
-    seteditItem(null);
+    setIsModal(true);
   };
 
   return (
@@ -178,6 +178,7 @@ const AdminPage: React.FC = () => {
             <Styled.MenuList>
               {AdminNav.map(({ id, name }) => (
                 <Styled.MenuListItem
+                  key={id}
                   id={id}
                   onClick={(event) => handleOpenMenu(event)}
                   active={categoryOpen === id}
@@ -214,6 +215,7 @@ const AdminPage: React.FC = () => {
             <SectionLayout title="Slogan" setIsModal={setIsModal}>
               {slogan.map((slogan) => (
                 <Slogan
+                  key={slogan.id}
                   slogan={slogan}
                   openModal={openModal}
                   deleteItem={deleteItem}

@@ -41,15 +41,15 @@ const technologyUpdate = {
       technology.iconFile = body.iconFileId;
     }
 
-    technology.populate({
-      path: "iconFile",
-    });
-
     assignExistProperties(technology, body, ["name", "category"]);
 
     await technology.save();
 
-    console.log(technology);
+    technology.populate({
+      path: "iconFile",
+    });
+
+    technology = await technology.execPopulate();
 
     let res = await mapTechnologyToResponse(technology);
 

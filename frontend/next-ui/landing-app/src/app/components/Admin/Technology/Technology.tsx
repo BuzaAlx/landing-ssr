@@ -21,8 +21,8 @@ const Techology: React.FC<{
           <Styled.ListItem>
             <span>Picture:</span>
             <Styled.Image
-              src={technology.iconFile.s3FileUrl}
-              alt={technology.iconFile.s3FileUrl}
+              src={technology.iconFile.url}
+              alt={technology.iconFile.name}
             />
           </Styled.ListItem>
         </Styled.List>

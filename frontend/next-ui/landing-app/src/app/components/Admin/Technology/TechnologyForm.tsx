@@ -13,8 +13,6 @@ const TechnologyForm: React.FC<{
   const [category, setCategory] = useState(technology?.category || "");
   const [iconFileId, setIconFileId] = useState(technology?.iconFile.id || "");
 
-  console.log(technology);
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const newTechnology = {
@@ -22,6 +20,8 @@ const TechnologyForm: React.FC<{
       category,
       iconFileId,
     };
+
+    console.log(newTechnology);
 
     technology
       ? updateAdminData("technology", technology.id, newTechnology).then(() =>
@@ -39,6 +39,10 @@ const TechnologyForm: React.FC<{
     UIUX: "ui_ux",
     Backend: "backend",
     Web: "web",
+  };
+
+  const handleChange = (e) => {
+    setCategory(e.target.value);
   };
 
   const keys = Object.keys(options);
@@ -64,7 +68,10 @@ const TechnologyForm: React.FC<{
 
         <Styled.Label>
           <span> Country Code: </span>
-          <Styled.Select className="form__title">
+          <Styled.Select
+            className="form__title"
+            onClick={(e) => handleChange(e)}
+          >
             {keys.map((key) => {
               return (
                 <option
@@ -87,7 +94,7 @@ const TechnologyForm: React.FC<{
           <Styled.Button
             type="submit"
             empty
-            disabled={!(name && category && iconFileId)}
+            // disabled={!(name && category && iconFileId)}
           >
             {technology ? "Save" : "Create"}
           </Styled.Button>

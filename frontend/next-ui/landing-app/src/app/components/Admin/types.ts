@@ -41,7 +41,7 @@ export interface IProject {
   shortDescription: string;
   fullDescription: string;
   technologies: ITechnology[];
-  link: string;
+  projectLink: string;
   imageFile: IIconFile;
   showOnHomePage: boolean;
 }

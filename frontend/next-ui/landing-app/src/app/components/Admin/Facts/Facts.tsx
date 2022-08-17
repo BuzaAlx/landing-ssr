@@ -22,7 +22,7 @@ const Facts: React.FC<{
         </Styled.ListItem>
         <Styled.ListItem>
           <span>Picture:</span>
-          <img src={fact.iconFile.s3FileUrl} alt={fact.iconFile.s3FileUrl} />
+          <img src={fact.iconFile.url} alt={fact.iconFile.name} />
         </Styled.ListItem>
       </Styled.List>
     </Styled.Item>

@@ -116,25 +116,28 @@ export const Label = styled("label")<Props>`
   }
 `;
 
+export const ImageContainer = styled("div")`
+  & > img {
+    height: 50px;
+  }
+`;
+
 export const CheckboxContainer = styled("div")`
-  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
   position: relative;
-  margin-top: 28px;
   align-self: flex-start;
-  padding-right: 137px;
   &:last-child {
     padding-right: 0;
     max-width: 220px;
   }
   & > div {
-    margin-right: 100px;
     color: #0c1033;
     font-size: 14px;
     font-weight: 700;
     line-height: 32px;
     white-space: nowrap;
   }
-  display: flex;
   & input {
     border: 0;
     clip: rect(0 0 0 0);
@@ -208,21 +211,26 @@ export const Button = styled("button")<Props>`
 
 export const Row = styled("div")`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   margin-left: -10px;
+  padding-left: 15px;
 `;
 
 export const PicturesWrapper = styled("div")`
-  display: flex;
-  margin-top: 28px;
-  max-width: 760px;
-  width: 100%;
-  min-height: 135px;
+  display: grid;
+  grid-template-columns: minmax(50px, 120px) 1fr;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 15px;
   & > span {
     color: #0c1033;
     font-size: 14px;
     font-weight: 700;
     line-height: 32px;
+    text-align: start;
   }
 `;
 

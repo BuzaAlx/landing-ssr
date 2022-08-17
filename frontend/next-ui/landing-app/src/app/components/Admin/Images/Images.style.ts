@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled("div")`
-  margin-left: 70px;
+  /* margin-left: 70px; */
 `;
 
 export const ImagesWrapper = styled("div")`
-  width: 605px;
+  /* width: 605px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -22,9 +22,11 @@ export const ImagesWrapper = styled("div")`
 `;
 
 export const SliderContainer = styled.div`
-  max-width:605px;
+  max-width:635px;
   width: 100%;
   height: 100%;
+
+
 
   & .slicke-slide > div > {
     margin: auto;
@@ -44,6 +46,7 @@ export const SliderContainer = styled.div`
       }
     }
   }
+
 
   & .slides *:focus {
     outline: 0;

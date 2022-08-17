@@ -29,7 +29,7 @@ const Projects: React.FC<{
           </Styled.ListItem>
           <Styled.ListItem>
             <span>Link:</span>
-            <span>{project.link}</span>
+            <span>{project.projectLink}</span>
           </Styled.ListItem>
           <Styled.ListItem>
             <span>Technologies:</span>
@@ -46,8 +46,8 @@ const Projects: React.FC<{
           <Styled.ListItem>
             <span>Picture:</span>
             <Styled.Image
-              src={project.imageFile.s3FileUrl}
-              alt={project.imageFile.s3FileUrl}
+              src={project.imageFile.url}
+              alt={project.imageFile.name}
             />
           </Styled.ListItem>
         </Styled.List>
