@@ -4,7 +4,7 @@ import * as Styled from "./form.styles";
 import Input from "../Input/input.commponent";
 import Textarea from "../Textarea/textarea.component";
 import Button from "../Button/button.component";
-import { registrationFormSchema } from "../../../../helpers/validation";
+// import { registrationFormSchema } from "../../../../helpers/validation";
 import { sendFormEA } from "../../../../services/event";
 import emailjs from "emailjs-com";
 
@@ -17,7 +17,7 @@ const Form = () => {
 
   return (
     <Formik
-      validationSchema={registrationFormSchema}
+      // validationSchema={registrationFormSchema}
       initialValues={{
         name: "",
         email: "",
