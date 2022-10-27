@@ -16,7 +16,7 @@ const getFile = {
   handler: async (context) => {
     const { params } = context.request;
 
-    console.log(params);
+    // console.log(params);
 
     const query = File.find();
 
@@ -26,14 +26,7 @@ const getFile = {
 
     const files = await query.exec();
 
-    // for (file of files) {
-    //   let url = await getFileUrl(file);
-    //   file.imageUrl = url;
-    // }
-
     let res = await Promise.all(files.map(mapFileToResponse));
-
-    console.log(res);
 
     context.status = 200;
 

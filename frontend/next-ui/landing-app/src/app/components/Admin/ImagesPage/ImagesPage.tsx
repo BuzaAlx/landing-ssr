@@ -23,7 +23,6 @@ const ImagesPage: React.FC<{}> = () => {
 
   const getImages = async () => {
     const images = await getAdminData("file");
-    console.log(images);
     setImages(images);
   };
 

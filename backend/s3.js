@@ -47,7 +47,7 @@ const getFileUrl = async (file) => {
 
   const command = new GetObjectCommand(getObjectParams);
 
-  let url = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
+  let url = await getSignedUrl(s3Client, command, { expiresIn: 500000 });
   return url;
 };
 

@@ -74,8 +74,6 @@ const projectUpdate = {
 
     project = await project.execPopulate();
 
-    console.log(project);
-
     let res = await mapProjectToResponse(project);
 
     context.status = 200;

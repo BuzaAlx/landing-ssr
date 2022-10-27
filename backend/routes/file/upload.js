@@ -16,15 +16,21 @@ const fileUpload = {
   },
   handler: async (context) => {
     context.request.files.forEach(async (file) => {
-      const result = await uploadFile(file);
+      try {
+        const result = await uploadFile(file);
+      } catch (error) {
+        console.log(error);
+      }
     });
 
     const files = await File.insertMany(context.request.files);
 
     context.status = 201;
 
+    let res = await Promise.all(files.map(mapFileToResponse));
+
     context.body = {
-      response: files.map(mapFileToResponse),
+      response: res,
     };
   },
 };

@@ -21,8 +21,6 @@ const TechnologyForm: React.FC<{
       iconFileId,
     };
 
-    console.log(newTechnology);
-
     technology
       ? updateAdminData("technology", technology.id, newTechnology).then(() =>
           close()

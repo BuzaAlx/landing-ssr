@@ -4,8 +4,6 @@ const { extension: mimeExtension } = require("mime-types");
 const makeFile = (rawFile) => {
   const { ext } = pathParse(rawFile.path);
 
-  console.log(rawFile);
-
   const file = {
     name: pathParse(rawFile.name).name,
     extension: ext.slice(1),
