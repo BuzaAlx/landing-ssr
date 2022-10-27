@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL: string | undefined = "http://localhost:7000/";
+const BASE_URL: string | undefined = "https://landing-ssr.vercel.app/";
 
 axios.defaults.baseURL = BASE_URL;
 axios.defaults.params = {};

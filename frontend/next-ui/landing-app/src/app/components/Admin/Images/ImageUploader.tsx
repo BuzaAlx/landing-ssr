@@ -3,14 +3,18 @@ import { uploadImage } from "services/api/adminApi";
 import { Button } from "../Form.styles";
 import * as Styled from "./ImagesUploader.style";
 
-const ImageUploader: React.FC<{ setIsUploaded: Function }> = ({
-  setIsUploaded,
-}) => {
+const ImageUploader: React.FC<{
+  setImages: Function;
+  images: any;
+}> = ({ setImages, images }) => {
   const [file, setFile] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    uploadImage(file).then(() => setIsUploaded(true));
+    uploadImage(file).then((res) => {
+      setImages([...images, ...res]);
+      setFile("");
+    });
   };
 
   const handleImageChange = (e) => {

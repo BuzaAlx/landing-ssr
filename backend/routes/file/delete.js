@@ -17,7 +17,11 @@ const fileDelete = {
 
     const f = await File.findOne().where("_id", params.id).exec();
 
-    await deleteFile(f);
+    try {
+      await deleteFile(f);
+    } catch (error) {
+      console.log(error);
+    }
 
     const file = await File.findByIdAndDelete(params.id);
 

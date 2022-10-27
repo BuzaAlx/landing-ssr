@@ -8,33 +8,25 @@ import { slides } from "app/img";
 
 const ImagesPage: React.FC<{}> = () => {
   const [images, setImages] = useState<IIconFile[]>([]);
-  const [isUpdated, setIsUpdated] = useState(false);
-
-  useEffect(() => {
-    if (isUpdated) {
-      getImages();
-    }
-    setIsUpdated(false);
-  }, [isUpdated]);
-
-  useEffect(() => {
-    getImages();
-  }, []);
 
   const getImages = async () => {
     const images = await getAdminData("file");
     setImages(images);
   };
 
+  useEffect(() => {
+    getImages();
+  }, [images]);
+
   const deleteImage = (id: string) => {
-    deleteAdminData("file", id).then(() => setIsUpdated(true));
+    deleteAdminData("file", id).then(() => console.log("reload page pls"));
   };
 
   return (
     <>
       <Wrapper>
         <Title>Images</Title>
-        <ImageUploader setIsUploaded={setIsUpdated}></ImageUploader>
+        <ImageUploader images={images} setImages={setImages}></ImageUploader>
         <Styled.List>
           {images.map((image) => (
             <li>
