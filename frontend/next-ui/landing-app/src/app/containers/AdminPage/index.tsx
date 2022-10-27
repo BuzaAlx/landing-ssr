@@ -70,10 +70,10 @@ const AdminPage: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    axios.defaults.headers.Authorization = `Bearer ${token}`;
-    if (token) {
-      loadData();
-    }
+    // axios.defaults.headers.Authorization = `Bearer ${token}`;
+    // if (token) {
+    loadData();
+    // }
   }, [token]);
 
   useEffect(() => {
