@@ -1,0 +1,48 @@
+.bg-bottom-planet {
+  position: absolute;
+  z-index: 99 !important;
+  background: url(../../images/space-man-header.svg) 50% 100% no-repeat;
+}
+
+.bg-rocket {
+  z-index: 4 !important;
+  background: url(../../images/rocket-header.svg) 50% 100% no-repeat;
+  background-position: 56% 100%;
+}
+
+.bg-red-sun {
+  z-index: 9 !important;
+  top: -235px;
+  left: 0px;
+  background: url(../../images/red-sun-header.svg) 50% 100% no-repeat;
+}
+
+.bg-yellow-moon {
+  z-index: 5 !important;
+  background: url(../../images/yellow-moon-header.svg) 50% 100% no-repeat;
+}
+
+.bg-green-planet {
+  z-index: 19;
+  background: url(../../images/green-planet-header.svg) 50% 100% no-repeat;
+}
+
+.bg-commet {
+  z-index: 90 !important;
+  top: -140px;
+  left: 120px;
+  background: url(../../images/comet-header.svg) 50% 100% no-repeat;
+}
+
+.bg-blue-planet {
+  background: url(../../images/blue-planet-header.svg) 50% 100% no-repeat;
+}
+
+.bg-macbook {
+  background: url(../../images/macbook-header.svg) 50% 100% no-repeat;
+}
+
+.bg-particles {
+  z-index: 5 !important;
+  background: url(../../images/bg-particles-header.svg) 50% 100% no-repeat fixed;
+}

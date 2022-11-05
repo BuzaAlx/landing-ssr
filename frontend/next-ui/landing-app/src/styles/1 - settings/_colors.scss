@@ -1,0 +1,35 @@
+//
+// COLORS ---------
+//
+
+$background-color: #e5e5e5;
+
+// Nav
+$nav-background-color: rgba(224, 223, 223, 0.41);
+$nav-text-color: #ffffff;
+
+// Paragraphs
+$text-color: #000000;
+$text-color-secondary: rgba(0, 0, 0, 0.5);
+
+// Border
+$border-color: #e1e1e1;
+$border-color-focus: #c5c5c5;
+
+// General
+
+
+// Buttons
+$button-color: #000000;
+$button-gradient: linear-gradient(
+  270deg,
+  rgba(0, 0, 0, 0.7) 0%,
+  rgba(0, 0, 0, 0.43) 100%
+);
+// Social
+$color-facebook: #0078ff;
+$color-facebook-hover: darken($color-facebook, 5%);
+$color-github: #24292e;
+$color-github-hover: lighten($color-github, 5%);
+
+$color-success: #000;

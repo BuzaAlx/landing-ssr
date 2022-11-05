@@ -1,0 +1,90 @@
+.blue-planet {
+  position: absolute;
+  left: -280px;
+  top: -210px;
+  width: 700px;
+  height: 700px;
+  background: url(../../images/order/blue-planet.svg) center center no-repeat;
+}
+
+.satellite {
+  position: absolute;
+  z-index: 9;
+  top: -260px;
+  left: 50px;
+  width: 380px;
+  height: 380px;
+  background: url(../../images/order/satellite.svg) center center no-repeat;
+  animation: fly-satelite 8s infinite;
+}
+
+.astro-guy {
+  position: absolute;
+  z-index: 9;
+  right: 130px;
+  bottom: -120px;
+  width: 270px;
+  height: 380px;
+  background: url(../../images/order/astro-guy.svg) center center no-repeat;
+  animation: astro-guy-apearing 8s forwards;
+}
+
+.dribbble-logo-bottom {
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  left: 0px;
+  width: 270px;
+  height: 380px;
+  background: url(../../images/order/dribbble-logo-bottom.svg) center center
+    no-repeat;
+}
+
+.dribbble-logo-bottom::after {
+  display: block;
+  position: relative;
+  top: 25px;
+  left: 139px;
+  content: "";
+  width: 5px;
+  height: 5px;
+  animation: pulse-dribbble 1s infinite;
+}
+
+.red-planet {
+  position: absolute;
+  right: -210px;
+  bottom: -240px;
+  width: 700px;
+  height: 700px;
+  background: url(../../images/order/red-planet.svg) center center no-repeat;
+}
+
+//keyframes
+
+@keyframes fly-satelite {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(700px, 700px, 50px) rotate(20deg);
+  }
+}
+
+@keyframes astro-guy-apearing {
+  0% {
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes pulse-dribbble {
+  0%,
+  100% {
+    box-shadow: 0px 3px 20px 0px rgb(255 33 106 / 50%);
+  }
+  50% {
+    box-shadow: 0px 3px 20px 20px rgb(255 33 106 / 50%);
+  }
+}
