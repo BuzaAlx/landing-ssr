@@ -1,3 +1,4 @@
+import React from "react";
 import AdminPage from "../src/app/containers/AdminPage";
 
 const Admin = () => {
