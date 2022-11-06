@@ -1,9 +1,7 @@
 import React from "react";
 import { motion, useScroll } from "framer-motion";
-// import "./styles.scss";
-// import "./stylesBackground.scss";
-import Button from "../../components/shared/ButtonNEW";
 import BurgeMenu from "../BurgerMenu";
+import Button from "../../components/shared/ButtonNEW";
 
 const Header: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -15,10 +13,10 @@ const Header: React.FC = () => {
           <nav className="header-navigation">
             <ul className="header-navigation__list">
               <li className="header-navigation__item">
-                {/* <Button>My blog</Button> */}
+                <Button>My blog</Button>
               </li>
               <li className="header-navigation__item">
-                {/* <Button>Contacts</Button> */}
+                <Button>Contacts</Button>
               </li>
             </ul>
           </nav>
@@ -35,8 +33,8 @@ const Header: React.FC = () => {
           </h1>
           <h2>Explore the secrets of a successful product</h2>
           <div className="header__button-group">
-            {/* <Button filled>Contitue</Button> */}
-            {/* <Button>buzasocial@gmail.com</Button> */}
+            <Button filled>Contitue</Button>
+            <Button>buzasocial@gmail.com</Button>
           </div>
         </div>
         <div className="header-background">
@@ -47,10 +45,10 @@ const Header: React.FC = () => {
             className="bg-red-sun"
             style={{ transform: "translateX:(20px)" }}
           ></div>
-          {/* <motion.div
+          <motion.div
             className="bg-red-sun"
             style={{ translateX: scrollYProgress }}
-          /> */}
+          />
 
           <div className="bg-yellow-moon"></div>
           <div className="bg-green-planet"></div>

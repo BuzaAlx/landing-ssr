@@ -55,3 +55,11 @@ a {
   text-decoration: none;
   color: white;
 }
+
+@import "./components/ButtonNEW.scss";
+@import "./components/section-wrapper.scss";
+
+@import "./containers/header.scss";
+@import "./containers/headerBackground.scss";
+@import "./containers/burgerMenu.scss";
+@import "./containers/services.scss";

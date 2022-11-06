@@ -1,11 +1,11 @@
 import React from "react";
-import "./styles.scss";
-import landingSVG from "../../images/services/miniicon-landing.svg";
-import hsdmethodsSVG from "../../images/services/miniicon-ux.svg";
-import uiSVG from "../../images/services/miniicon-ui.svg";
-import uxSVG from "../../images/services/miniicon-campaign.svg";
-import protoSVG from "../../images/services/miniicon-logo.svg";
-import segmentationSVG from "../../images/services/miniicon-bcard.svg";
+
+import landingSVG from "../../../images/services/miniicon-landing.svg";
+import hsdmethodsSVG from "../../../images/services/miniicon-ux.svg";
+import uiSVG from "../../../images/services/miniicon-ui.svg";
+import uxSVG from "../../../images/services/miniicon-campaign.svg";
+import protoSVG from "../../../images/services/miniicon-logo.svg";
+import segmentationSVG from "../../../images/services/miniicon-bcard.svg";
 import SectionWrapper from "../../components/section-wrapper";
 
 const list = [
@@ -49,14 +49,11 @@ const list = [
 
 export default function Services() {
   return (
-    // <section className="services">
-    //   <h2 className="services__title">What exactly can I do?</h2>
-
     <SectionWrapper title="What exactly can I do?">
       <div className="services__inner container">
         {list.map((el, i) => (
           <div className={`service-block ${i >= 3 ? "cleared-block" : ""}`}>
-            <img src={el.img} alt="service " />
+            <img src={el.img.src} alt="service " />
             <h4>{el.title}</h4>
             <p>{el.text}</p>
           </div>
@@ -77,6 +74,5 @@ export default function Services() {
         </div>
       </div>
     </SectionWrapper>
-    // </section>
   );
 }

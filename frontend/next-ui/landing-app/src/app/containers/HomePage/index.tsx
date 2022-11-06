@@ -9,9 +9,9 @@ const HomePage: React.FC = () => {
     <div className="main-wrapper">
       <Header />
       <main className="main">
-        {/* <Services />
-        <Order />
-        <Portfolio /> */}
+        <Services />
+        {/* <Order /> */}
+        {/* <Portfolio /> */}
       </main>
     </div>
   );
