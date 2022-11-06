@@ -1,7 +1,5 @@
 import React from "react";
-import Button from "../../components/shared/Button";
-import "./styles.scss";
-import "./stylesBackground.scss";
+import Button from "../../components/shared/ButtonNEW";
 
 export default function Order() {
   return (

@@ -10,8 +10,8 @@ const HomePage: React.FC = () => {
       <Header />
       <main className="main">
         <Services />
-        {/* <Order /> */}
-        {/* <Portfolio /> */}
+        <Order />
+        <Portfolio />
       </main>
     </div>
   );
