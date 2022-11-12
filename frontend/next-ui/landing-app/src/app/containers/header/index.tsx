@@ -16,10 +16,10 @@ const Header: React.FC<IHomeHeader> = ({ isOpen, setIsOpen }) => {
           <nav className="header-navigation">
             <ul className="header-navigation__list">
               <li className="header-navigation__item">
-                <Button>My blog</Button>
+                <Button filled>My blog</Button>
               </li>
               <li className="header-navigation__item">
-                <Button>Contacts</Button>
+                <Button filled>Contacts</Button>
               </li>
             </ul>
           </nav>

@@ -47,17 +47,18 @@ const list = [
   },
 ];
 
-export default function Services() {
+export default function Services({ facts }) {
   return (
     <SectionWrapper title="What exactly can I do?">
       <div className="services__inner container">
-        {list.map((el, i) => (
+        {facts.map((fact, i) => (
           <div className={`service-block ${i >= 3 ? "cleared-block" : ""}`}>
-            <img src={el.img.src} alt="service " />
-            <h4>{el.title}</h4>
-            <p>{el.text}</p>
+            <img src={fact.iconFile.url} alt={fact.title} />
+            <h4>{fact.title}</h4>
+            <p>{fact.text}</p>
           </div>
         ))}
+
         <div className="cleaner"></div>
         <div className="text-bg-block">
           <div className="text-bg-block__text">

@@ -10,7 +10,7 @@ const TechnologyForm: React.FC<{
   close: Function;
 }> = ({ technology, close }) => {
   const [name, setName] = useState(technology?.name || "");
-  const [category, setCategory] = useState(technology?.category || "");
+  const [category, setCategory] = useState(technology?.category || "mobile");
   const [iconFileId, setIconFileId] = useState(technology?.iconFile.id || "");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {

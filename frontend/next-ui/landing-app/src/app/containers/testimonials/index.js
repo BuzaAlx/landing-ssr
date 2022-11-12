@@ -3,11 +3,13 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import nextjsSVG from "../../../images/portfolio/technologies/nextjs.svg";
+import ReactCountryFlag from "react-country-flag";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-export default function Testimonials() {
+export default function Testimonials({ testimonials }) {
+  console.log(testimonials);
   return (
     <SectionWrapper title="Testimonials">
       <div className="testimonials-slider">
@@ -30,7 +32,12 @@ export default function Testimonials() {
             },
           }}
         >
-          <SwiperSlide>
+          {testimonials.map((testimonial) => (
+            <SwiperSlide>
+              <Slide testimonial={testimonial} />
+            </SwiperSlide>
+          ))}
+          {/* <SwiperSlide>
             <Slide />
           </SwiperSlide>
           <SwiperSlide>
@@ -41,26 +48,35 @@ export default function Testimonials() {
           </SwiperSlide>
           <SwiperSlide>
             <Slide />
-          </SwiperSlide>
-          ...
+          </SwiperSlide> */}
         </Swiper>
       </div>
     </SectionWrapper>
   );
 }
 
-const Slide = () => {
+const flagStyle = {
+  width: "100%",
+  height: "100%",
+};
+
+const Slide = ({ testimonial }) => {
   return (
     <div className="slide-container">
-      <img className="slide__image" src={nextjsSVG.src} alt="customer_igor" />
-      <p className="slide__feedback">
-        Filip has worked flexibly and proactively has come up with ideas for
-        improving the web administration of 3D printing center
-      </p>
+      <ReactCountryFlag
+        className="slide__image"
+        countryCode={testimonial.countryCode}
+        svg
+        style={flagStyle}
+      />
+      {/* <img className="slide__image" src={nextjsSVG.src} alt="customer_igor" /> */}
+      <p className="slide__feedback">{testimonial.feedback}</p>
       <div className="slide__customer-info">
-        <div className="slide-name">Ondřej Štefek</div>
-        <div className="slide-company-name">3Dees s.r.o.</div>
-        <span className="slide-customer-position">CEO</span>
+        <div className="slide-name">{testimonial.customerName}</div>
+        <div className="slide-company-name">{testimonial.companyName}</div>
+        <span className="slide-customer-position">
+          {testimonial.customerPosition}
+        </span>
       </div>
     </div>
   );

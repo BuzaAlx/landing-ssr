@@ -39,6 +39,7 @@ const Images: React.FC<{
     infinite: false,
     slidesToShow: 3,
     slidesToScroll: 1,
+    dots: true,
     nextArrow: (
       <SampleNextArrow img={slides.AdminVectorRight} forWorks top={50} />
     ),

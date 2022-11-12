@@ -5,39 +5,24 @@ import Order from "../order";
 import Portfolio from "../portfolio";
 import Services from "../services";
 import Testimonials from "../testimonials";
+import Overlay from "../overlay";
+import Banner from "../banner";
 
-const HomePage: React.FC = () => {
+const HomePage: React.FC = ({ projects, facts, testimonials }) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  console.log(isOpen);
 
   return (
     <div className="main-wrapper">
       <Header isOpen={isOpen} setIsOpen={setIsOpen} />
       <main className="main">
-        <Services />
+        <Services facts={facts} />
         <Order />
-        <Portfolio />
-        <Order />
-        <Testimonials />
+        <Portfolio projects={projects} />
+        <Banner />
+        <Testimonials testimonials={testimonials} />
       </main>
       <Footer />
-      <div className={`overlay ${isOpen ? "overlay--visible" : ""}`}>
-        <ul className="overlay__list">
-          <li>
-            <a href="#">HOME</a>
-          </li>
-          <li>
-            <a href="#">SERVICES</a>
-          </li>
-          <li>
-            <a href="#">PORTFOLIO</a>
-          </li>
-          <li>
-            <a href="#">TESTIMONIALS</a>
-          </li>
-        </ul>
-      </div>
+      <Overlay isOpen={isOpen} />
     </div>
   );
 };
