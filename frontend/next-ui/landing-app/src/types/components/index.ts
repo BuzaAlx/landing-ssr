@@ -3,6 +3,16 @@ export interface ProjectImgStyle {
   width: string;
 }
 
+export interface IHomeProps {
+  projects: IProject[];
+  facts: IFact[];
+  testimonials: ITestimonial[];
+}
+
+export interface IOverlay {
+  isOpen: boolean;
+}
+
 export interface ProjectCardType {
   title: string;
   projectImg: ProjectImgStyle;
@@ -111,6 +121,10 @@ export interface IProject {
   };
 }
 
+export interface IPortfolioProps {
+  projects: any;
+}
+
 interface IProjectTechType {
   id: string;
   name: string;
@@ -125,6 +139,10 @@ export interface ITestimonial {
   customerPosition: string;
   feedback: string;
   platforms: IPlatform[];
+}
+
+export interface ITestimonialProps {
+  testimonials: ITestimonial[];
 }
 
 interface IPlatform {

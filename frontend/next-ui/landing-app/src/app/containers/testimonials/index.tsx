@@ -2,13 +2,13 @@ import SectionWrapper from "app/components/section-wrapper";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
-import nextjsSVG from "../../../images/portfolio/technologies/nextjs.svg";
 import ReactCountryFlag from "react-country-flag";
+import { ITestimonialProps } from "../../../types/components/index";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-export default function Testimonials({ testimonials }) {
+const Testimonials: React.FC<ITestimonialProps> = ({ testimonials }) => {
   console.log(testimonials);
   return (
     <SectionWrapper title="Testimonials">
@@ -37,23 +37,11 @@ export default function Testimonials({ testimonials }) {
               <Slide testimonial={testimonial} />
             </SwiperSlide>
           ))}
-          {/* <SwiperSlide>
-            <Slide />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slide />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slide />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slide />
-          </SwiperSlide> */}
         </Swiper>
       </div>
     </SectionWrapper>
   );
-}
+};
 
 const flagStyle = {
   width: "100%",
@@ -69,7 +57,6 @@ const Slide = ({ testimonial }) => {
         svg
         style={flagStyle}
       />
-      {/* <img className="slide__image" src={nextjsSVG.src} alt="customer_igor" /> */}
       <p className="slide__feedback">{testimonial.feedback}</p>
       <div className="slide__customer-info">
         <div className="slide-name">{testimonial.customerName}</div>
@@ -81,3 +68,5 @@ const Slide = ({ testimonial }) => {
     </div>
   );
 };
+
+export default Testimonials;

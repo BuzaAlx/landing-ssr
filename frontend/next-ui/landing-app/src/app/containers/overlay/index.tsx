@@ -1,6 +1,7 @@
 import React from "react";
+import { IOverlay } from "../../../types/components/index";
 
-export default function Overlay({ isOpen }) {
+const Overlay: React.FC<IOverlay> = ({ isOpen }) => {
   return (
     <div className={`overlay ${isOpen ? "overlay--visible" : ""}`}>
       <ul className="overlay__list">
@@ -19,4 +20,6 @@ export default function Overlay({ isOpen }) {
       </ul>
     </div>
   );
-}
+};
+
+export default Overlay;

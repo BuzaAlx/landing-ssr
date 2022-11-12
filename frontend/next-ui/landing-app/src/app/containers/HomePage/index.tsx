@@ -7,8 +7,9 @@ import Services from "../services";
 import Testimonials from "../testimonials";
 import Overlay from "../overlay";
 import Banner from "../banner";
+import { IHomeProps } from "../../../types/components/index";
 
-const HomePage: React.FC = ({ projects, facts, testimonials }) => {
+const HomePage: React.FC<IHomeProps> = ({ projects, facts, testimonials }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
