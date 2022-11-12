@@ -3,7 +3,9 @@ import { motion, useScroll } from "framer-motion";
 import BurgeMenu from "../BurgerMenu";
 import Button from "../../components/shared/ButtonNEW";
 
-const Header: React.FC = () => {
+import { IHomeHeader } from "../../../types/components";
+
+const Header: React.FC<IHomeHeader> = ({ isOpen, setIsOpen }) => {
   const { scrollYProgress } = useScroll();
 
   return (
@@ -58,7 +60,7 @@ const Header: React.FC = () => {
           <div className="bg-particles"></div>
         </div>
       </header>
-      <BurgeMenu />
+      <BurgeMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 };

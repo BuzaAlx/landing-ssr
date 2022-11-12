@@ -1,9 +1,15 @@
 import React from "react";
 
-export default function BurgerMenu() {
+export default function BurgerMenu({ setIsOpen, isOpen }) {
   return (
-    <button className="burger-btn">
-      <div className="burger__inner"></div>
-    </button>
+    <div
+      className={isOpen ? "open" : ""}
+      id="nav-icon4"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   );
 }
