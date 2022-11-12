@@ -1,7 +1,7 @@
 import SectionWrapper from "app/components/section-wrapper";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import nextjsSVG from "../../../images/portfolio/technologies/nextjs.svg";
 
 import "swiper/css";
@@ -13,11 +13,22 @@ export default function Testimonials() {
       <div className="testimonials-slider">
         <Swiper
           spaceBetween={50}
-          slidesPerView={3}
+          slidesPerView={1}
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
+          autoplay={{
+            delay: 5000,
+          }}
+          modules={[Pagination, Autoplay]}
+          breakpoints={{
+            900: {
+              slidesPerView: 2,
+            },
+            1350: {
+              slidesPerView: 3,
+            },
+          }}
         >
           <SwiperSlide>
             <Slide />

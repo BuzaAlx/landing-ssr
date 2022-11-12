@@ -3,6 +3,12 @@
 
 html {
   font-size: 62.5%;
+  @media screen and (max-width: 1024px) {
+    font-size: 50%;
+  }
+  @media screen and (max-width: 550px) {
+    font-size: 40%;
+  }
 }
 
 body {
@@ -29,8 +35,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "RobotoSlab", "PT Serif", "PT Sans", "Times New Roman",
-    sans-serif;
 }
 
 h1 {

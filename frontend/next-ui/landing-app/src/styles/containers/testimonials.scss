@@ -42,7 +42,13 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
 .slide__feedback {
+  @media screen and (max-width: 1550px) {
+    max-width: 350px;
+    padding-bottom: 80px;
+  }
+
   padding-top: 20px;
   max-width: 400px;
   margin: 0px auto;
@@ -68,6 +74,7 @@
     text-align: left;
   }
 }
+
 .slide__customer-info {
   display: block;
   position: absolute;

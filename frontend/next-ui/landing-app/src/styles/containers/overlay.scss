@@ -18,5 +18,32 @@
 .overlay--visible {
   visibility: visible;
   opacity: 1;
-  background-color: rgba(43, 36, 81, 0.95);
+  background-color: rgba(43, 36, 81, 0.96);
+}
+
+.overlay__list {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  user-select: none;
+  transform: translateY(-50%);
+  & a {
+    position: relative;
+    top: -10px;
+    font-family: "PT Sans", "Open Sans", "Helvetica", Arial, sans-serif;
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 12rem;
+    transition: all 0.1s;
+    transform: scale(1.5);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0px 2px 65px rgb(255 255 255 / 33%);
+    transition: all 0.5 ease;
+    &:hover {
+      letter-spacing: 0.5rem;
+      color: #ff216a;
+    }
+  }
 }

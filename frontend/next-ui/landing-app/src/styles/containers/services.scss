@@ -7,6 +7,10 @@
   display: inline-block;
   width: 33%;
   vertical-align: top;
+  @media screen and (max-width: 900px) {
+    width: 50%;
+    margin-bottom: 20px;
+  }
 }
 
 .service-block {
@@ -29,6 +33,12 @@
   float: right;
   clear: both;
   margin-top: 45px;
+
+  @media screen and (max-width: 900px) {
+    clear: initial;
+    float: none;
+    margin-top: 0;
+  }
 }
 
 .cleaner {
@@ -47,6 +57,9 @@
   background-color: white;
   -webkit-box-shadow: 0px 7px 40px rgb(0 0 0 / 5%);
   box-shadow: 0px 7px 40px rgb(0 0 0 / 5%);
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 }
 
 .text-bg-block__text {

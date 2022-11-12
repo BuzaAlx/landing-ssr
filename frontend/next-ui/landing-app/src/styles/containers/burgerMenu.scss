@@ -9,6 +9,10 @@
   transition: 0.5s ease-in-out;
   cursor: pointer;
   right: 20px;
+  @media screen and (max-width: 600px) {
+    width: 50px;
+    height: 35px;
+  }
 }
 
 #nav-icon4 span {
@@ -64,6 +68,10 @@
   transform: rotate(45deg);
   top: -3px;
   left: 8px;
+  @media screen and (max-width: 600px) {
+    top: -5px;
+    left: 8px;
+  }
 }
 
 #nav-icon4.open span:nth-child(2) {
@@ -78,4 +86,12 @@
   transform: rotate(-45deg);
   top: 39px;
   left: 8px;
+  @media screen and (max-width: 600px) {
+    top: 31px;
+    left: 8px;
+  }
+}
+
+.open {
+  position: fixed !important;
 }

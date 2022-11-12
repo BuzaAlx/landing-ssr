@@ -2,6 +2,7 @@ import React from "react";
 import { motion, useScroll } from "framer-motion";
 import BurgeMenu from "../BurgerMenu";
 import Button from "../../components/shared/ButtonNEW";
+import ukraineFlagSVG from "../../../images/languages/ukraine-flag.svg";
 
 import { IHomeHeader } from "../../../types/components";
 
@@ -23,7 +24,12 @@ const Header: React.FC<IHomeHeader> = ({ isOpen, setIsOpen }) => {
             </ul>
           </nav>
           <a href="/" className="changle-language-btn">
-            change language to <strong>UKR</strong>
+            <span>change language to</span>
+            <img
+              className="changle-language__flag"
+              src={ukraineFlagSVG.src}
+              alt="Ukraine"
+            />
           </a>
         </div>
         <div className="header__info">

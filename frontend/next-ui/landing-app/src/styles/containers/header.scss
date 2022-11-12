@@ -30,8 +30,11 @@
   display: flex;
   justify-content: flex-end;
   padding: 28px 0;
-  padding-right: 100px;
+  padding-right: 130px;
   gap: 25px;
+  @media screen and (max-width: 600px) {
+    padding-right: 100px;
+  }
 }
 
 .header-navigation__list {
@@ -45,12 +48,31 @@
     height: 45px;
     line-height: 4.1rem;
     padding: 0 15px;
+    @media screen and (max-width: 1024px) {
+      height: 45px;
+      line-height: 5.2rem;
+    }
+    @media screen and (max-width: 550px) {
+      height: 40px;
+    }
   }
 }
 
 .changle-language-btn {
   font-size: 1.7rem;
   line-height: 4.6rem;
+  display: flex;
+  align-items: center;
+  & > span {
+    margin-right: 10px;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+}
+
+.changle-language__flag {
+  width: 30px;
 }
 
 .header__info {
