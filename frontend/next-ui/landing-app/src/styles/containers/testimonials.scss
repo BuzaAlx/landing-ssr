@@ -1,0 +1,91 @@
+.slide-container {
+  position: relative;
+  min-height: 220px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.testimonials-slider {
+  & .swiper-slide {
+    opacity: 0.6;
+    background-color: white;
+    border-radius: 5px;
+    outline: none;
+    -webkit-box-shadow: 0px 7px 40px rgb(0 0 0 / 5%);
+    box-shadow: 0px 7px 40px rgb(0 0 0 / 5%);
+  }
+  & .swiper-slide-next {
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+  }
+  & > .swiper {
+    overflow: visible;
+  }
+
+  & .swiper-pagination {
+    bottom: -50px !important;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #000000;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.slide__image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slide__feedback {
+  padding-top: 20px;
+  max-width: 400px;
+  margin: 0px auto;
+  margin-top: 4px;
+  font-size: 2rem;
+  line-height: 3rem;
+  &::before {
+    display: block;
+    position: relative;
+    top: 32px;
+    margin-right: -18px;
+    margin-bottom: 5px;
+    font-size: 8rem;
+    content: "“";
+    text-align: right;
+  }
+  &::after {
+    display: block;
+    margin-top: -42px;
+    margin-left: -16px;
+    font-size: 8rem;
+    content: "„";
+    text-align: left;
+  }
+}
+.slide__customer-info {
+  display: block;
+  position: absolute;
+  font-family: "Roboto Slab", "PT Serif", "PT Sans", "Times New Roman";
+  font-size: 3.6rem;
+  right: 10px;
+  bottom: -30px;
+}
+
+.slide-name {
+}
+.slide-company-name {
+  font-size: 1.8rem;
+  font-weight: 300;
+  white-space: nowrap;
+  display: inline;
+  margin-right: 2px;
+}
+.slide-customer-position {
+  font-size: 1.8rem;
+}

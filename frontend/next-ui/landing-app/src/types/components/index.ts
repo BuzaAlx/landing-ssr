@@ -180,3 +180,8 @@ interface IBlogArticleTag {
   id: string;
   name: string;
 }
+
+export interface IHomeHeader {
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+}
