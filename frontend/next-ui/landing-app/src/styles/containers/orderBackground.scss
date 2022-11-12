@@ -27,6 +27,12 @@
   height: 380px;
   background: url(../../images/order/astro-guy.svg) center center no-repeat;
   animation: astro-guy-apearing 8s forwards;
+  @media screen and (max-width: 1150px) {
+    right: 0;
+  }
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 }
 
 .dribbble-logo-bottom {

@@ -17,7 +17,9 @@ export default function Footer() {
         </div>
         <div className="footer-column footer__contacts">
           <h2 className="footer-column__title">Contacts</h2>
-          <p>Phone Number: +380-66-52-000-58</p>
+          <p className="footer-column__phone">
+            Phone Number: <span>+380-66-52-000-58</span>
+          </p>
           <p>City: m.Rivne</p>
           <p>Adress: Shevchenka 17</p>
         </div>
