@@ -6,7 +6,7 @@ const config = {
     port: 7000,
   },
   database: {
-    uri: "mongodb+srv://buza:npUsYmSmN4kW8Puf@cluster0.dch8z.mongodb.net/Landing?retryWrites=true&w=majority",
+    uri: "mongodb+srv://buza:FTaC6wSjnWUld5op@cluster0.dch8z.mongodb.net/Landing?retryWrites=true&w=majority",
   },
   jwt: {
     SECRET_KEY: "secret",
