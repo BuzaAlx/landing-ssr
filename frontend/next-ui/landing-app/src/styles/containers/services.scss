@@ -14,6 +14,10 @@
 }
 
 .service-block {
+  & img {
+    width: 60px;
+    height: 60px;
+  }
   & p {
     margin: 0 auto;
     max-width: 270px;

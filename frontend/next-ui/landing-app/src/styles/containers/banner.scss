@@ -1,0 +1,32 @@
+.banner {
+  overflow: hidden;
+  position: relative;
+  height: 380px;
+  text-align: center;
+  & h2 {
+    position: relative;
+    padding-top: 145px;
+    color: rgba(255, 255, 255, 0.644);
+    font-size: 3.6rem;
+  }
+}
+
+.banner__overlay {
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  width: 100%;
+  height: 600px;
+  background: url(../../images/banner-section.svg) center center no-repeat;
+  will-change: transform;
+  background-size: cover;
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    background-color: rgba(151, 147, 147, 0.103);
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+  }
+}

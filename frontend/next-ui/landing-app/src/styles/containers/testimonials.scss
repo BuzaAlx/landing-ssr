@@ -6,6 +6,7 @@
 }
 
 .testimonials-slider {
+  margin: 0 20px 50px;
   & .swiper-slide {
     opacity: 0.6;
     background-color: white;
@@ -23,22 +24,20 @@
   }
 
   & .swiper-pagination {
-    bottom: -50px !important;
+    bottom: -70px !important;
   }
 
   .swiper-pagination-bullet {
-    background-color: #000000;
+    background-color: #2b2451;
     width: 16px;
     height: 16px;
   }
 }
 
 .slide__image {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  position: absolute;
-  top: -45px;
+  width: 80px !important;
+  position: absolute !important;
+  top: -125px;
   left: 50%;
   transform: translateX(-50%);
 }
