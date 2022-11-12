@@ -20,8 +20,6 @@ const SloganForm: React.FC<{
       selected,
     };
 
-    // console.log(newSlogan);
-
     slogan
       ? updateAdminData("slogan", slogan.id, newSlogan).then(() => close())
       : createAdminData("slogan", newSlogan).then(() => close());

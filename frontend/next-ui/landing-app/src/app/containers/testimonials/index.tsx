@@ -9,7 +9,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const Testimonials: React.FC<ITestimonialProps> = ({ testimonials }) => {
-  console.log(testimonials);
   return (
     <SectionWrapper title="Testimonials">
       <div className="testimonials-slider">
@@ -33,7 +32,7 @@ const Testimonials: React.FC<ITestimonialProps> = ({ testimonials }) => {
           }}
         >
           {testimonials.map((testimonial) => (
-            <SwiperSlide>
+            <SwiperSlide key={testimonial.id}>
               <Slide testimonial={testimonial} />
             </SwiperSlide>
           ))}

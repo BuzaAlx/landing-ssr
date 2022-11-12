@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL: string | undefined = "http://localhost:7000";
+const BASE_URL: string | undefined = process.env.SERVER_URL;
 
 axios.defaults.baseURL = BASE_URL;
 axios.defaults.params = {};
